@@ -1,0 +1,71 @@
+// Place all the styles related to the Main controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1{
+  color: #df0;
+  padding:0px;
+  margin: 0px;
+}
+
+#map {
+  height: 300px;
+  width: 100%;
+ }
+
+.notice, .alert{
+  text-align: center;
+  color: black;
+  padding: 5px 0px;
+}
+.notice{background-color: #D0F0df;}
+.alert{background-color: #ffc060;}
+
+.flashwrap{
+  min-height:30px;
+}
+
+form {
+  margin-top:10px;
+  input[type=text]{
+    width:80%;
+    padding:7px;
+    font-size: 16px;
+    color: #df0;
+    background-color: #555;
+    border: 2px solid white;
+    border-radius: 9px;
+  }
+  input[type=submit]{
+    background-color: #cf0;
+    border: none;
+    border-radius: 5px;
+    padding:5px;
+  }
+}
+
+table{
+  margin-top: 20px;
+  width: 100%;
+  display: block;
+
+  tbody{
+    height:180px;
+    display: inline-block;
+    overflow:auto;
+    width:100%;
+    tr{width:100%}
+    td{
+      padding: 3px 0px;
+      border-bottom: 1px solid #f3f3f3;
+      width:25%;
+    }
+
+  }
+
+}
+
+body{
+  background-color: #333;
+  color: #df0;
+}
