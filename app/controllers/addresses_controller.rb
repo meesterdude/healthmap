@@ -10,9 +10,9 @@ class AddressesController < ApplicationController
   def create
     @address = Address.new(address_params)
     if @address.save
-      redirect_to(addresses_path, notice: 'Address added')
+      redirect_to(root_path, notice: 'Address added')
     else
-      redirect_to(addresses_path, alert: 'Address could not be added')
+      redirect_to(root_path, alert: 'Address could not be added')
     end
   end
 
