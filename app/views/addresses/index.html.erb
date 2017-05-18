@@ -1,0 +1,38 @@
+<h1>HealthMap</h1>
+<div id="map"></div>
+<%= form_for(@new_address) do |f| %>
+<%= f.text_field :entry, placeholder: 'Enter Street Address' %>
+<%= f.submit 'Create' %>
+<% end %>
+
+<table>
+  <tbody>
+    <% @addresses.reverse_each do |address| %>
+      <tr>
+        <%= content_tag(:td, address.entry) %>
+        <%= content_tag(:td, address.latitude) %>
+        <%= content_tag(:td, address.longitude) %>
+        <%= content_tag(:td, time_ago_in_words(address.created_at) + ' ago') %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<script>
+  function initMap() {
+    var addresses = <%= @map_addresses.html_safe %>
+    console.log(addresses)
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 2,
+      center: addresses[0].cords
+    });
+    for (var i = 0, len = addresses.length; i < len; i++) {
+      new google.maps.Marker({
+        position: addresses[i].cords,
+        map: map
+      });
+    }
+  }
+</script>
+

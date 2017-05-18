@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Healthmap</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <section class='flashwrap'>
+  <% if flash[:alert] %>
+    <div class="alert"><%= flash[:alert] %></div>
+  <% end %>
+  <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
+  </section>
+    <%= yield %>
+  </body>
+      <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAt78aMwG-tMJ2liUTFsoKkRbOtEHeg1hY&callback=initMap">
+    </script>
+</html>
